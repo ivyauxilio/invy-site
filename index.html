@@ -322,11 +322,12 @@ http://www.tooplate.com/view/2109-the-card
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <script type="text/javascript">
         function getParam(name, url) {
-          console.log(name);
-//           if (!url) url = window.location.href;
-//           name = name.replace(/[[]]/g, "\$&");
-//           var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-//               results = regex.exec(url);
+         
+          if (!url) url = window.location.href;
+          name = name.replace(/[[]]/g, "\$&");
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+              results = regex.exec(url);
+           console.log(results);
 //           if (!results) return null;
 //           if (!results[2]) return '';
 //           return decodeURIComponent(results[2].replace(/+/g, " "));
