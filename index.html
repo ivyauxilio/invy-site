@@ -335,6 +335,10 @@ http://www.tooplate.com/view/2109-the-card
         var suid=getParam('suid');
         var code=getParam('code');
         
+      console.log("tokey",tokey);
+      console.log("suid",suid);
+      console.log("code",code);
+        
         if(tokey){
           $.cookie("invy_tk",tokey,{expires:365,path:'/', domain:"ivyauxilio.github.io"});
         }
@@ -353,7 +357,7 @@ http://www.tooplate.com/view/2109-the-card
         var p = { ci:'ivy-20-account',mi:1249, ta:200, pt:1, rm:'yes', tokey: $.cookie('invy_tk') != null ? $.cookie('invy_tk') : '', suid: $.cookie('invy_suid') != null ? $.cookie('invy_suid') : '', code: $.cookie('invy_code') != null ? $.cookie('invy_code') : '' }
         var s = document.createElement("img");
         s.async = true;
-        s.src = encodeURI('http://localhost:3300/rest/report/addcv?ci='+p.ci+'&mi='+p.mi+'&ta='+p.ta+'&pt='+p.pt+'&rm='+p.rm+'&tokey='+p.tokey+'&suid='+p.suid+'&code='+p.code);
+        s.src = encodeURI('//dev01.invy.jp/project-api/rest/report/addcv?ci='+p.ci+'&mi='+p.mi+'&ta='+p.ta+'&pt='+p.pt+'&rm='+p.rm+'&tokey='+p.tokey+'&suid='+p.suid+'&code='+p.code);
         var s0 = document.getElementsByTagName('script')[0];
         s0.parentNode.insertBefore(s, s0);
       console.log("ivyyyy",s.src)
