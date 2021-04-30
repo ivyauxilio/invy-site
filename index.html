@@ -322,6 +322,7 @@ http://www.tooplate.com/view/2109-the-card
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <script type="text/javascript">
         function getParam(name, url) {
+          console.log(name);
           if (!url) url = window.location.href;
           name = name.replace(/[[]]/g, "\$&");
           var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
