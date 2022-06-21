@@ -357,16 +357,15 @@ http://www.tooplate.com/view/2109-the-card
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script type="text/javascript">
-(function(d,a,o,e){
-    var p = { ci:'ectemplate',mi:0000, ta:500, pt:1, rm:'yes', tokey: $.cookie('invy_tk') != null ? $.cookie('invy_tk') : '', suid: $.cookie('invy_suid') != null ? $.cookie('invy_suid') : '', code: $.cookie('invy_code') != null ? $.cookie('invy_code') : '', cli_id: 37 }
-    var s = document.createElement("img");
-    s.async = true;
-    s.src = encodeURI('//dev02.invy.jp/project-api/rest/report/addcv?ci='+p.ci+'&mi='+p.mi+'&ta='+p.ta+'&pt='+p.pt+'&rm='+p.rm+'&tokey='+p.tokey+'&suid='+p.suid+'&code='+p.code+'&cli_id='+p.cli_id);
-    var s0 = document.getElementsByTagName('script')[0];
-    s0.parentNode.insertBefore(s, s0);
-})(document,'body','invy-asp','img')
-</script>    
-    
+    (function(d,a,o,e){
+        var p = { ci:'ivy-company-service',mi:'#被紹介者ID#', ta:'#売上金額#', pt:'#成果ポイント#', rm:'#備考#', tokey: $.cookie('invy_tk') != null ? $.cookie('invy_tk') : '', suid: $.cookie('invy_suid') != null ? $.cookie('invy_suid') : '', code: $.cookie('invy_code') != null ? $.cookie('invy_code') : '' }
+        var s = document.createElement("img");
+        s.async = true;
+        s.src = encodeURI('http://localhost:3300/rest/report/addcv?ci='+p.ci+'&mi='+p.mi+'&ta='+p.ta+'&pt='+p.pt+'&rm='+p.rm+'&tokey='+p.tokey+'&suid='+p.suid+'&code='+p.code);
+        var s0 = document.getElementsByTagName('script')[0];
+        s0.parentNode.insertBefore(s, s0);
+    })(document,'body','invy-asp','img')
+</script>
 
  
 
