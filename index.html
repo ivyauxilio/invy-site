@@ -317,56 +317,45 @@ http://www.tooplate.com/view/2109-the-card
     <script src="slick/slick.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
 
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-    <script type="text/javascript">
-        function getParam(name, url) {
-         
-          if (!url) url = window.location.href;
-          name = name.replace(/[[]]/g, "\$&");
-          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-              results = regex.exec(url);
-           console.log(results);
-          if (!results) return null;
-          if (!results[2]) return '';
-//           return decodeURIComponent(results[2].replace(/+/g, " "));
-          return results[2];
-        }
-        
-        var tokey=getParam('tokey');
-        var suid=getParam('suid');
-        var code=getParam('code');
-        
-      console.log("tokey",tokey);
-      console.log("suid",suid);
-      console.log("code",code);
-        
-        if(tokey){
-          $.cookie("invy_tk",tokey,{expires:365,path:'/', domain:"ivyauxilio.github.io"});
-        }
-        if(suid){
-          $.cookie("invy_suid",suid,{expires:365,path:'/', domain:"ivyauxilio.github.io"});
-        }
-        if(code){
-          $.cookie("invy_code",code,{expires:365,path:'/', domain:"ivyauxilio.github.io"});
-        }
-    </script>
-            
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script type="text/javascript">
-    (function(d,a,o,e){
-        var p = { ci:'superadmin-project-ivy',mi:'23', ta:'3', pt:'1', rm:'local', tokey: $.cookie('invy_tk') != null ? $.cookie('invy_tk') : '', suid: $.cookie('invy_suid') != null ? $.cookie('invy_suid') : '', code: $.cookie('invy_code') != null ? $.cookie('invy_code') : '', cli_id: 1 }
-        var s = document.createElement("img");
-        s.async = true;
-        s.src = encodeURI('http://localhost:3300/rest/report/addcv?ci='+p.ci+'&mi='+p.mi+'&ta='+p.ta+'&pt='+p.pt+'&rm='+p.rm+'&tokey='+p.tokey+'&suid='+p.suid+'&code='+p.code+'&cli_id='+p.cli_id);
-        var s0 = document.getElementsByTagName('script')[0];
-        s0.parentNode.insertBefore(s, s0);
-    })(document,'body','invy-asp','img')
+function getParam(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[[]]/g, "\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+var tokey=getParam('tokey');
+var suid=getParam('suid');
+var code=getParam('code');
+if(tokey){
+    document.cookie = 'invy_tk='+tokey+'; path=/; max-age=31536000; domain=#親ドメインを記載してください#';
+}
+if(suid){
+    document.cookie = 'invy_suid='+suid+'; path=/; max-age=31536000; domain=#親ドメインを記載してください#';
+}
+if(code){
+    document.cookie = 'invy_code='+code+'; path=/; max-age=31536000; domain=#親ドメインを記載してください#';
+}
 </script>
+
               
- 
+ <script type="text/javascript">
+function getCookie(name) {
+    var matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+var p = { ci:'superadmin-ivy-cp',mi:'22', ta:'1', pt:'1', rm:'staging', tokey: getCookie('invy_tk'), suid: getCookie('invy_suid'), code: getCookie('invy_code'),  cli_id: 227 };
+var s = document.createElement("img");
+s.async = true;
+s.src = encodeURI('https://stg02.invy.jp/project-api/rest/report/addcv?ci='+p.ci+'&mi='+p.mi+'&ta='+p.ta+'&pt='+p.pt+'&rm='+p.rm+'&tokey='+p.tokey+'&suid='+p.suid+'&code='+p.code+'&cli_id='+p.cli_id);
+var s0 = document.getElementsByTagName('script')[0];
+s0.parentNode.insertBefore(s, s0);
+</script>
 
     <script>
       let slickInitDone = false;
